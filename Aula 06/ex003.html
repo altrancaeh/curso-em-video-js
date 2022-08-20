@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro programa</title>
+    <style>
+        body {
+            background-color: #8c8ce4;
+            color: white;
+            font: normal 20pt Arial;
+        }
+        h1 {
+            color: #d141ca
+        }
+    </style> 
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+    <p>Já me livrei da maldição!</p> <!--Isso é um comentário no HTML-->
+    <script>
+        var n1 = Number(window.prompt ('Digite um número: ')) // isso é uma string
+        var n2 = Number(window.prompt ('Digite outro número: ')) // isso também é uma string
+        var soma = n1 + n2 // Aqui não está somando, está concatenando.
+        // number + number para adição
+        // string + string para concatenação
+        // Para transformar as strings em numeros, precisamos... veja o caderno Aula 6!
+        window.alert (`A soma entre ${n1} e ${n2} é igual a ${soma} `)
+    </script>
+</body>
+</html>

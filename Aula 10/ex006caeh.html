@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM Caeh</title>
+    <style>
+        div#area {
+            background-color: #00ffff;
+            color: white;
+            font: normal 16pt Verdana;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="area"> 
+        <!--Você vai adicionando os eventos conforme você precisa,  
+        tudo na mesma linha do elemento que quer atribuir o evento direto no HTML:
+        <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseleave="sair()">
+        -->
+        Interaja
+    </div>
+    <script>
+        /* Seguindo minha vontade de atribuir diferentes variáveis para as funções, me deparei com
+        o problema de adicoinar os EventListeners pois não consegui atribuir cada um deles a todas as 
+        variáveis. Apenas o primeiro evento funcionou, os demais, não.
+        */
+
+        function clicar() {
+            var a = window.document.querySelector('div#area')
+            a.innerText = 'Clicou!'
+            a.style.background = 'Red'
+            a.addEventListener('mouseenter', entrar)
+        }
+        function entrar() {
+            var b = window.document.querySelector('div#area')
+            b.innerText = 'Entrou!'
+            b.addEventListener('click', clicar)
+        }
+        function sair() {
+            var c = window.document.querySelector('div#area')
+            c.innerText = 'Saiu!'
+            c.style.background = '#00ffff'
+            c.addEventListener('mouseleave', sair)
+        }
+        /*
+        Nas funções acima, eu atribui uma função usando querySelector,
+        mas podemos usar de outras maneiras como abaixo:
+            var a = window.document.getElementsById('area') -> sem precisar
+            mudar a div de ID.
+            var a = window.document.getElementsByName('area') -> precisa mudar
+            a div de Id para Name para isso funcionar.
+        */
+
+        /*
+        Este código não daria certo pois eu teria, em caso de atualização de sistemas,
+        ter que lidar  com diversas mudanças de códigos pq eu resolvi atribuir uma variável
+        para cada função, separadamente. O esquema é nunca duplicar função e nunca 
+        utilizar mais formas do que o necessário para
+        */
+    </script>
+</body>
+</html>

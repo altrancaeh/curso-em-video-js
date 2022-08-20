@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros Passos com DOM</title>
+    <style>
+        body {
+            background-color: #63d489;
+            color: white
+            font normal 18pt Verdana;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p> Aqui vai o resultado</p>
+    <p> Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div class="msg"> Clique em mim</div> <!--Dei o ID ou NOME a depender da tag, de "msg" para esta div-->
+    <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p') [1] // [ 0 ] é o primeiro parágrafo que apareceu o p.
+        /* Seleção por ID
+        var d = window.document.getElementById('msg')
+        d.style.background = 'green'
+        d.innerText = 'Estou aguardando...'
+        */
+       /* Seleção por NOME 
+       var d = window.document.getElementsByName("msg") [0]
+       d.innerText = 'Olá!'
+       d.style.background = 'Black'
+       d.style.color = 'white'
+       */
+    // São várias maneiras de acessar, você decide qual a melhor. Abaixo a forma de Querry Selector
+        var d = window.document.querySelector('div.msg')
+        d.style.color = 'blue'
+        d.style.background = 'black'    
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area {
+            background-color: #00ffff;
+            color: white;
+            font: normal 16pt Verdana;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="area"> 
+        <!--Você vai adicionando os eventos conforme você precisa,  
+        tudo na mesma linha do elemento que quer atribuir o evento direto no HTML:
+        <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseleave="sair()">
+        -->
+        Interaja
+    </div>
+    <script>
+        var a = window.document.querySelector('div#area')
+
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseleave', sair)
+
+        function clicar() {
+            a.innerText = 'Clicou!'
+            a.style.background = 'Red'
+        }
+        function entrar() {
+            a.innerText = 'Entrou!'
+        }
+        function sair() {
+            a.innerText = 'Saiu!'
+            a.style.background = '#00ffff'
+        }
+    </script>
+</body>
+</html>

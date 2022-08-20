@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrangeiro</title>
+    <style>
+        body {
+            font: normal 10pt Arial;
+            text-align: center;
+        }
+        div#res {
+            margin-top: 20px;
+            font: normal 13pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>De qual país você é</h1>
+    Qual é seu país? <input type="text" name="paístxt" id="paístxt">
+    <input type="button" value="Enviar" onclick="verNacio()">
+    <div id="res">
+
+    </div>
+    
+    <script>
+        function verNacio() {
+            var país = window.document.querySelector('input#paístxt') // crio um espaço para receber o texto de resposta
+            país = String(país.value) // transforma a resposta em string
+            var res = window.document.querySelector('div#res') // mostro ao JS que a interação será feita no espaço DIV id = res
+            res.innerHTML = `<p>Seu país é <strong>${país}.</strong></p>` // indico que o espaço res deverá receber esta mensagem
+            if (país == 'Brasil') {
+                res.innerHTML += `<p>Você é Brasileiro!</p>`
+            } else {
+                res.innerHTML += `<p>Você é Estrangeiro!</p>`
+            }
+        }
+        
+
+
+    </script>
+</body>
+</html>
